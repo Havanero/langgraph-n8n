@@ -18,34 +18,48 @@ def get_coolest_cities():
     return "nyc, sf, berlin"
 
 
-def structured_rag_prompt():
-    return """
-    Organize the analysis into these sections:
+def enhanced_rag_analysis(context):
+    return f"""
+    Analyze the provided information about the report. Structure your analysis using these specific guidelines:
 
-    ### Core Business Model
-    - State the primary business activities
-    - Highlight key subsidiaries and ownership
-    - Describe main services offered
+    1. Core Business Model
+    - Start with the company's primary business definition
+    - List key subsidiaries with ownership percentages
+    - Detail main revenue-generating activities
+    - Include any specific locations or jurisdictions
 
-    ### Revenue Drivers
-    - Focus on unique/primary revenue sources
-    - Include market-dependent factors
-    - Avoid repeating business model details
+    2. Revenue Drivers
+    - List specific revenue streams with their contributions if available
+    - Include quantitative metrics where provided (growth rates, volumes)
+    - Describe market conditions affecting revenue
+    - Note any seasonal or cyclical factors
 
-    ### Strategic Position
-    - Emphasize competitive advantages
-    - Include market share/dominance
-    - Highlight strategic relationships
+    3. Strategic Position
+    - Detail competitive advantages
+    - List key partnerships and ownership structures
+    - Describe growth initiatives and target markets
+    - Include any stated strategic goals
 
-    ### Market Context
-    - Industry-specific factors
-    - Market trends affecting business
-    - Relevant performance metrics
+    4. Market Context & Risks
+    - Describe relevant market trends with specific data
+    - Include regulatory environment
+    - List key performance indicators
+    - Note major risk factors
 
-    Format Guidelines:
-    - Start each point with an action verb when possible
-    - Avoid repeating information across sections
-    - Include specific numbers/metrics where available
+    5. Financial Metrics (if available)
+    - Trading volumes
+    - Revenue figures
+    - Growth rates
+    - Market share data
+
+    Guidelines:
+    - Use specific numbers and percentages whenever available
+    - Start each bullet point with an action verb when possible
+    - Avoid generic statements without supporting details
+    - Include timeframes for any metrics or goals mentioned
+    - Reference source materials for key claims
+
+    Context: {context}
     """
 
 
@@ -61,7 +75,7 @@ def defi_information(report_query: str):
     Analyze the provided information about {data}. For each section:
         {structured_rag_prompt()}
     """
-    return prompt
+    return enhanced_rag_analysis(data)
 
 
 def format_analysis_report(text):

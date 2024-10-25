@@ -22,6 +22,6 @@ vector_store = QdrantVectorStore.from_existing_collection(
 retriever = vector_store.as_retriever(
     search_type="similarity",
     search_kwargs={
-        "k": 100,
+        "k": 400,
     },
 )
