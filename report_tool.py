@@ -72,10 +72,10 @@ def defi_information(report_query: str):
     for c in chunks:
         data.append(c.page_content)
     prompt = f"""
-    Analyze the provided information about {data}. For each section:
-        {structured_rag_prompt()}
+    Analyze the provided information. For each section:
+        {enhanced_rag_analysis(data)}
     """
-    return enhanced_rag_analysis(data)
+    return prompt
 
 
 def format_analysis_report(text):
