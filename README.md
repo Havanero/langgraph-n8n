@@ -9,45 +9,45 @@
 - Requires OpenAI API Key and local Vector DB with above report loaded
 
 ``` 
-# main.py
+# installation 
+pip install -e .
 from report_agent import app
+gen-ai run 'what is the BitcoinGroup report about'
 
-query = {'messages': [('user', 'what is the BitcoinGroup report about')]}
-
-events=app.stream(query,{}, stream_mode="values") # for now we don't pass any config
-for ev in events:
-    print(ev["messages"][-1].pretty_print())
 ```
 - The RAG Results would look something like this
 
- ================================== Ai Message ==================================
+================================== Ai Message ==================================
 
-The BitcoinGroup report provides detailed information about Bitcoin Group SE, a capital investment company and consulting firm focused on Bitcoin and blockchain business models. Here is an analysis based on the provided information:
+The Bitcoin report of 2021 provides a comprehensive analysis of Bitcoin Group SE's financial performance and strategic positioning during the fiscal year. Here's a structured overview based on the report:
 
-1. Core Business Model:
-   - Bitcoin Group SE is a capital investment company and consulting firm with a focus on Bitcoin and blockchain business models.
-   - The company generates revenue from consulting and brokerage services for cryptocurrency and blockchain business models.
-   - Bitcoin Group SE holds a 100% stake in futurum bank AG, located in Frankfurt am Main.
+1. **Core Business Model**
+   - **Primary Business**: Bitcoin Group SE is a capital investment company and consulting firm focused on Bitcoin and blockchain business models.
+   - **Key Subsidiaries**: The company holds a 100% stake in futurum bank AG, which operates the cryptocurrency trading platform Bitcoin.de.
+   - **Revenue-Generating Activities**: Revenue is primarily generated from consulting and brokerage services for cryptocurrencies.
+   - **Locations**: The company is headquartered in Herford, Germany.
 
-2. Revenue Drivers:
-   - Revenue streams include consulting and brokerage services for cryptocurrency and blockchain business models.
-   - The company's revenue was EUR 25.4 million in the reporting year, showing significant growth from the previous year.
-   - Market conditions, such as the sharp increase in the price and high volatility of Bitcoin, have positively impacted revenue.
+2. **Revenue Drivers**
+   - **Revenue Streams**: The main revenue stream is brokerage fees from the Bitcoin.de marketplace.
+   - **Quantitative Metrics**: Revenue increased to EUR 25.4 million in 2021 from EUR 15.0 million in 2020, marking a 69.3% rise.
+   - **Market Conditions**: The rising popularity of cryptocurrencies and increased trading volumes positively impacted revenue.
 
-3. Strategic Position:
-   - Competitive advantages include expertise in Bitcoin and blockchain technologies.
-   - The company has a 100% stake in futurum bank AG and plans further participations in the cryptocurrency field.
-   - Growth initiatives include expanding partnerships and target markets to enhance profitability.
+3. **Strategic Position**
+   - **Competitive Advantages**: The company benefits from its established trading platform and strategic partnerships.
+   - **Key Partnerships**: Bitcoin Group SE has a 50% interest in Sineus Financial Services GmbH.
+   - **Growth Initiatives**: The company plans to expand its services and increase its stake in cryptocurrency-related companies.
+   - **Strategic Goals**: Aims to boost company value and profitability through strategic investments.
 
-4. Market Context & Risks:
-   - Regulatory environment plays a significant role in the market, with attention to government regulations on cryptocurrencies.
-   - Major risk factors include cybersecurity threats, loss of cryptocurrencies, and regulatory uncertainties.
-   - The company is exposed to market trends and performance indicators specific to the cryptocurrency industry.
+4. **Market Context & Risks**
+   - **Market Trends**: The cryptocurrency market saw significant growth, with Bitcoin's price appreciating by 74.6% over the year.
+   - **Regulatory Environment**: The company operates in a complex regulatory landscape, with potential impacts from government regulations on cryptocurrencies.
+   - **Risk Factors**: Major risks include market volatility and regulatory changes.
 
-5. Financial Metrics:
-   - Trading volumes and revenue figures contribute to the company's financial performance.
-   - The company reported a net profit after taxes of EUR 13,373,717 in the reporting year.
-   - Growth rates and market share data are key financial metrics monitored by the company.
+5. **Financial Metrics**
+   - **Trading Volumes**: Increased trading volumes on the Bitcoin.de platform.
+   - **Revenue Figures**: Revenue of EUR 25.4 million in 2021.
+   - **Growth Rates**: Revenue growth of 69.3% compared to the previous year.
+   - **Market Share Data**: The company maintained a strong position in the cryptocurrency trading market.
 
-Overall, the BitcoinGroup report highlights the company's strategic focus on cryptocurrency and blockchain technologies, revenue drivers, competitive positioning, market context, and financial performance metrics.
+Overall, the report highlights Bitcoin Group SE's successful fiscal year in 2021, driven by increased demand for cryptocurrencies and strategic business operations.
  
