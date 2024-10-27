@@ -9,11 +9,9 @@
 - Requires OpenAI API Key and local Vector DB with above report loaded
 
 ``` 
-# installation 
+# installation  - this will create gen-ai command for you to invoke
 pip install -e .
-from report_agent import app
 gen-ai run 'what is the BitcoinGroup report about'
-
 ```
 - The RAG Results would look something like this
 
