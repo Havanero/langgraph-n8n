@@ -50,27 +50,42 @@ fsspec==2024.10.0
     # via huggingface-hub
 greenlet==3.1.1
     # via sqlalchemy
+grpcio==1.67.0
+    # via
+    #   grpcio-tools
+    #   qdrant-client
+grpcio-tools==1.67.0
+    # via qdrant-client
 h11==0.14.0
     # via httpcore
+h2==4.1.0
+    # via httpx
+hpack==4.0.0
+    # via h2
 httpcore==1.0.6
     # via httpx
-httpx==0.27.2
+httpx[http2]==0.27.2
     # via
     #   anthropic
     #   langgraph-sdk
     #   langsmith
     #   openai
+    #   qdrant-client
     #   tavily-python
 httpx-sse==0.4.0
     # via langgraph-sdk
 huggingface-hub==0.26.1
     # via tokenizers
+hyperframe==6.0.1
+    # via h2
 idna==3.10
     # via
     #   anyio
     #   httpx
     #   requests
     #   yarl
+jinja2==3.1.4
+    # via -r requirements.in
 jiter==0.6.1
     # via
     #   anthropic
@@ -91,10 +106,13 @@ langchain-core==0.3.13
     #   langchain-anthropic
     #   langchain-community
     #   langchain-openai
+    #   langchain-qdrant
     #   langchain-text-splitters
     #   langgraph
     #   langgraph-checkpoint
 langchain-openai==0.2.3
+    # via -r requirements.in
+langchain-qdrant==0.1.4
     # via -r requirements.in
 langchain-text-splitters==0.3.0
     # via langchain
@@ -109,6 +127,8 @@ langsmith==0.1.137
     #   langchain
     #   langchain-community
     #   langchain-core
+markupsafe==3.0.2
+    # via jinja2
 marshmallow==3.23.0
     # via dataclasses-json
 msgpack==1.1.0
@@ -123,6 +143,7 @@ numpy==1.26.4
     # via
     #   langchain
     #   langchain-community
+    #   qdrant-client
 openai==1.52.2
     # via langchain-openai
 orjson==3.10.10
@@ -134,17 +155,23 @@ packaging==24.1
     #   huggingface-hub
     #   langchain-core
     #   marshmallow
+portalocker==2.10.1
+    # via qdrant-client
 propcache==0.2.0
     # via yarl
+protobuf==5.28.3
+    # via grpcio-tools
 pydantic==2.9.2
     # via
     #   anthropic
     #   langchain
     #   langchain-anthropic
     #   langchain-core
+    #   langchain-qdrant
     #   langsmith
     #   openai
     #   pydantic-settings
+    #   qdrant-client
 pydantic-core==2.23.4
     # via pydantic
 pydantic-settings==2.6.0
@@ -157,6 +184,8 @@ pyyaml==6.0.2
     #   langchain
     #   langchain-community
     #   langchain-core
+qdrant-client==1.12.0
+    # via langchain-qdrant
 regex==2024.9.11
     # via tiktoken
 requests==2.32.3
@@ -210,6 +239,11 @@ typing-extensions==4.12.2
 typing-inspect==0.9.0
     # via dataclasses-json
 urllib3==2.2.3
-    # via requests
+    # via
+    #   qdrant-client
+    #   requests
 yarl==1.16.0
     # via aiohttp
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools

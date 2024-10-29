@@ -1,5 +1,6 @@
 from functools import lru_cache
 
+from app.config import GraphConfig
 from app.db import MemStore, VectorStore
 from app.state import State
 from app.tools import ToolSet, create_tool_documents
@@ -22,10 +23,11 @@ def _get_open_ai(model="gpt-4o"):
     return ChatOpenAI(temperature=0, model_name="gpt-4o").bind_tools(tools)
 
 
-def report_agent(state: State):
+def report_agent(state: State, config: GraphConfig):
     selected_tools = [current_tools.get(id) for id in state["selected_tools"]]
 
     llm_with_tools = _get_open_ai().bind_tools(selected_tools)
+    #    breakpoint()
     return {"messages": [llm_with_tools.invoke(state["messages"])]}
 
 

@@ -1,6 +1,6 @@
 import click
 
-from app.worflow import app
+from app.workflow import app
 
 
 @click.group()

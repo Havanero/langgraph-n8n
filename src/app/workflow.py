@@ -1,10 +1,12 @@
 from langgraph.graph import START, StateGraph
 from langgraph.prebuilt import tools_condition
 
+from app.config import GraphConfig
 from app.nodes import report_agent, select_tools, tool_node
 from app.state import State
 
 builder = StateGraph(State)
+# builder = StateGraph(State, config_schema=GraphConfig)
 
 
 builder.add_node("report_agent", report_agent)
