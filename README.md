@@ -1,4 +1,4 @@
-# Re-Active AI Agent with Large Number of Tools
+# Re-Active AI Agent with Large Number of Tools - Including RAG retrieval tool
 ## Example of using langgraph nodes and edges with langchain tools 
 
 ### Load, Split, Emnbed, Store 
